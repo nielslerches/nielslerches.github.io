@@ -73,8 +73,8 @@ publish:
 
 github: publish
 	touch "$(OUTPUTDIR)/.nojekyll"
-	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) -c "www.lysergic.io" "$(OUTPUTDIR)"
-	git push origin $(GITHUB_PAGES_BRANCH)
+	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) -c "www.lysergic.io" --force "$(OUTPUTDIR)"
+	git push origin $(GITHUB_PAGES_BRANCH) --force
 	$(MAKE) clean
 
 

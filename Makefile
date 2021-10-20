@@ -72,8 +72,10 @@ publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
 github: publish
+	touch "$(OUTPUTDIR)/.nojekyll"
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
 	git push origin $(GITHUB_PAGES_BRANCH)
+	$(MAKE) clean
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish github

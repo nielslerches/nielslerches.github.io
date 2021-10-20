@@ -1,0 +1,26 @@
+:root {
+    --unit: 1rem;
+    --primary: black;
+    --secondary: white;
+    --font: var(--unit) sans-serif;
+}
+
+body {
+    color: var(--primary);
+    font: var(--font);
+}
+
+.body {
+    --offset: calc(.5 * var(--unit));
+    background: var(--secondary);
+    border: 1px solid var(--primary);
+    padding: var(--unit);
+    box-shadow: var(--offset) var(--offset) var(--primary);
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: var(--unit);
+    margin: var(--unit);
+}

@@ -1,6 +1,5 @@
 PY?=python3
 PELICAN?=pelican
-PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
@@ -10,6 +9,7 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 GITHUB_PAGES_BRANCH=gh-pages
 
+PELICANOPTS=-t $(BASEDIR)/theme
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -73,7 +73,7 @@ publish:
 
 github: publish
 	touch "$(OUTPUTDIR)/.nojekyll"
-	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
+	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) -c "www.lysergic.io" "$(OUTPUTDIR)"
 	git push origin $(GITHUB_PAGES_BRANCH)
 	$(MAKE) clean
 

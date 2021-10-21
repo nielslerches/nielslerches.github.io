@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 AUTHOR = 'lysergic'
 SITENAME = 'lysergic.io'
 SITEURL = ''
@@ -26,6 +29,9 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
+
+THEME = Path(__file__).parent / "theme"
+PLUGINS = ["plugins.gitcommit_metadata"]
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

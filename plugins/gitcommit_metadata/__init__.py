@@ -29,7 +29,7 @@ def test(article_generator, metadata):
         dt = datetime.fromtimestamp(float(hunk.final_committer.time), tzinfo)
         if modified is None or dt > modified:
             modified = dt
-        
+
         tzinfo = timezone(timedelta(minutes=hunk.orig_committer.offset))
         dt = datetime.fromtimestamp(float(hunk.orig_committer.time), tzinfo)
         if date is None or dt > date:

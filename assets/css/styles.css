@@ -4,12 +4,23 @@ body {
     background-size: cover;
 }
 
-h1 {
-    color: tomato;
-    text-shadow: 0 0 0.1rem black;
-    font-family: fantasy;
+h1, p {
+    text-shadow:
+        1px 0 black,
+        -1px 0 black,
+        0 1px black,
+        0 -1px black;
 }
 
 a {
     text-decoration: none;
+}
+
+h1 {
+    color: tomato;
+    font-family: fantasy;
+}
+
+p {
+    color: white;
 }

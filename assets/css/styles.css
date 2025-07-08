@@ -1,8 +1,37 @@
+:root {
+    font-size: 1rem;
+}
+
 body {
     background-image: url("/assets/img/sparkles.webp");
     background-repeat: repeat;
     background-size: cover;
     image-rendering: pixelated;
+}
+
+header a {
+    display: flex;
+    gap: .5rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin-top: 0;
+}
+
+header .random-emoji {
+    font-size: 3rem;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.random-emoji {
+    font-family: unset;
 }
 
 /* latin */
@@ -17,10 +46,10 @@ body {
 
 h1, p {
     text-shadow:
-        1px 0 black,
-        -1px 0 black,
-        0 1px black,
-        0 -1px black;
+        2px 0 black,
+        -2px 0 black,
+        0 2px black,
+        0 -2px black;
 }
 
 a {

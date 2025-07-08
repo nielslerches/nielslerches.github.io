@@ -11,9 +11,15 @@
 </head>
 
 <body>
-    <a href="/">
-        <h1>lysergic's website</h1>
-    </a>
+    <header>
+        <a href="/">
+            <span class="random-emoji"></span>
+            <div class="row">
+                <h1>lysergic's website</h1>
+                <p>internet citizen</p>
+            </div>
+        </a>
+    </header>
     <main>
         <p>
             I'm a programmer specializing in Python, backend development, and AWS.
@@ -22,13 +28,35 @@
             I have over 8 years of professional experience as of 2025.
         </p>
         <p>
-            I currently work for <a href="https://jppol.dk" style="color: lightgray;">JP/Politikens Hus</a> as a Backend Developer.
+            I currently work for <a href="https://jppol.dk" style="color: lightgray;">JP/Politikens Hus</a> as a Backend
+            Developer.
         </p>
         <p>
             My current interests are database systems and stream processing.<br>
             My hobbies are playing games with my closest friends.
         </p>
     </main>
+    <script>
+        function getRandomEmoji() {
+            const emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "🤣", "😂", "🙂", "🙃", "🫠", "😉", "😊", "😇"];
+            const index = Math.floor(Math.random() * emojis.length);
+            const emoji = emojis[index];
+            return emoji;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".random-emoji").forEach(
+                /**
+                 * @param {HTMLElement} element
+                 * */
+                (element) => {
+                    element.textContent = getRandomEmoji();
+                    element.addEventListener("mouseenter", () => {
+                        element.textContent = getRandomEmoji();
+                    });
+                });
+        });
+    </script>
 </body>
 
 </html>
